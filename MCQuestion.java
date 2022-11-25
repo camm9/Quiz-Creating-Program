@@ -126,7 +126,7 @@ public class MCQuestion extends Question {
 		String correctAnswer = null;
 		ArrayList<String> possibleAnswers = ((MCQuestion) question).getOptions();
 		for (int j = 0; j < possibleAnswers.size(); j++) {
-			if (possibleAnswers.get(j).indexOf("*") == 0) {
+			if (possibleAnswers.get(j).indexOf("*") == 2) {
 				correctAnswer = possibleAnswers.get(j);
 			}
 		}
@@ -141,12 +141,17 @@ public class MCQuestion extends Question {
 		double points = question.getPoint();
 		possibleAnswers = question.getOptions();
 		for (int j = 0; j < possibleAnswers.size(); j++) {
-			if (possibleAnswers.get(j).indexOf("*") == 0 || possibleAnswers.get(j).indexOf("#") == 0) {
-				String str = possibleAnswers.get(j).substring(1);
+			//if (possibleAnswers.get(j).indexOf("*") == 2 || possibleAnswers.get(j).indexOf("#") != 2) {
+			if (possibleAnswers.get(j).indexOf("*") == 2) {
+				String str = possibleAnswers.get(j).substring(3);
+				System.out.println(letterChar + ": " + str);
+			} else if (possibleAnswers.get(j).indexOf("*") != 2 &&possibleAnswers.get(j).indexOf("#") == 0 ){
+				String str = possibleAnswers.get(j).substring(2);
 				System.out.println(letterChar + ": " + str);
 			} else {
 				System.out.println(letterChar + ": " + possibleAnswers.get(j));
 			}
+			
 			letterChar++;
 		}
 		System.out.println("Enter your choice >> ");
