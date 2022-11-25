@@ -84,14 +84,6 @@ public abstract class Question {
 						String option = scanner.nextLine();
 						//save incorrect answers with '##answer' (after first inputed answer) and correct answers with '*answer' 
 						if(i > 0) {
-//							if (option.indexOf("#") != 0) {
-//								if (option.indexOf("*") != 0) {
-//									option = "##"+option;
-//								}
-//								if(option.indexOf("*") == 0) {
-//									option = "##"+option;
-//								}
-//							}
 							option = "##"+option;
 						}
 						
