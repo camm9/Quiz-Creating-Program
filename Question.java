@@ -82,12 +82,19 @@ public abstract class Question {
 					for (int i = 0; i <= numOfOptions - 1; i++) {
 						System.out.println("Enter Option " + letterChar + " (Start with * for correct answer) >>");
 						String option = scanner.nextLine();
-						//save incorrect answers with # and correct answers with * 
-						if (option.indexOf("#") != 0) {
-							if (option.indexOf("*") != 0) {
-								option = "#"+option;
-							}
+						//save incorrect answers with '##answer' (after first inputed answer) and correct answers with '*answer' 
+						if(i > 0) {
+//							if (option.indexOf("#") != 0) {
+//								if (option.indexOf("*") != 0) {
+//									option = "##"+option;
+//								}
+//								if(option.indexOf("*") == 0) {
+//									option = "##"+option;
+//								}
+//							}
+							option = "##"+option;
 						}
+						
 						optionsList.add(option);
 						letterChar++;
 					}
