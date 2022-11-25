@@ -141,7 +141,7 @@ public class MCQuestion extends Question {
 		double points = question.getPoint();
 		possibleAnswers = question.getOptions();
 		for (int j = 0; j < possibleAnswers.size(); j++) {
-			//if (possibleAnswers.get(j).indexOf("*") == 2 || possibleAnswers.get(j).indexOf("#") != 2) {
+			
 			if (possibleAnswers.get(j).indexOf("*") == 2) {
 				String str = possibleAnswers.get(j).substring(3);
 				System.out.println(letterChar + ": " + str);
